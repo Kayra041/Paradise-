@@ -1,0 +1,1541 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "7942fe4c-dffa-4146-8cab-d254b3d80d5d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "37eda463-a170-44f9-af54-61378ffc9294"
+          ]
+        }
+      ],
+      "x": 155,
+      "y": 64
+    },
+    {
+      "type": "response",
+      "name": "help menu",
+      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "ℙ𝕣𝕠𝕘𝕣𝕒𝕞𝕞𝕚𝕖𝕣𝕥 𝕧𝕠𝕟 𝕂𝕒𝕪𝕣𝕒",
+          "value": "",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+        }
+      ],
+      "x": 369,
+      "y": 42,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "A38CFF",
+        "Hilfe Menü",
+        "",
+        "Zentral Bank",
+        "",
+        "",
+        "Prefix ist: \" ! \"\nCommands:\n\" bal \" = zeigt dein Geld an.\n\" with \" = hebt dein Geld von der Bank ab!\n\" dep \" = zahlt dein Geld auf die Bank ein!\n\" work \" = Arbeit/Einkommen",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "work",
+      "guid": "b684356a-b0cd-475e-ae6b-7b977285a739",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "880335fe-1f8d-44e0-8435-d819c23f2dd5"
+          ]
+        }
+      ],
+      "x": 152,
+      "y": 606
+    },
+    {
+      "type": "command",
+      "name": "dep",
+      "guid": "bd4dd61a-b9b2-46c8-aae2-0162a7627f60",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "f08d3aba-5a7a-45c4-9bef-166912cb9c93"
+          ]
+        }
+      ],
+      "x": 147,
+      "y": 699
+    },
+    {
+      "type": "command",
+      "name": "with",
+      "guid": "31ba711b-3cc3-43db-b45e-9083d6691fca",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "9a8b92f4-afaf-4e74-a067-dd8130898030"
+          ]
+        }
+      ],
+      "x": 148,
+      "y": 800
+    },
+    {
+      "type": "command",
+      "name": "bal",
+      "guid": "b964c5c8-8a09-4b81-a547-e34f73a5110b",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "cec2bae7-7248-48fd-9b90-ed94bb70e988"
+          ]
+        }
+      ],
+      "x": 155,
+      "y": 512
+    },
+    {
+      "type": "response",
+      "name": "getmoney",
+      "guid": "cec2bae7-7248-48fd-9b90-ed94bb70e988",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "cash",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "b639172d-9910-4a50-848a-66c2f037cb6d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b964c5c8-8a09-4b81-a547-e34f73a5110b"
+        }
+      ],
+      "x": 358,
+      "y": 452,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "cash",
+        "cash",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "getmoney_1",
+      "guid": "b639172d-9910-4a50-848a-66c2f037cb6d",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "bank",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "6651e994-c8d4-41ce-bf11-8a4832533ce0"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "cec2bae7-7248-48fd-9b90-ed94bb70e988"
+        }
+      ],
+      "x": 569,
+      "y": 458,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "bank",
+        "bank",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "user Money Embed",
+      "guid": "6651e994-c8d4-41ce-bf11-8a4832533ce0",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "Cash",
+          "value": "${tempVars.cash}💸",
+          "inline": "true"
+        },
+        {
+          "name": "Bank",
+          "value": "${tempVars.bank}💸",
+          "inline": "true"
+        }
+      ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b639172d-9910-4a50-848a-66c2f037cb6d"
+        }
+      ],
+      "x": 782,
+      "y": 452,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "5789FF",
+        "",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "${dbsVars.CommandAuthor.user.avatarURL}",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "gen1",
+      "guid": "880335fe-1f8d-44e0-8435-d819c23f2dd5",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "e984631c-d75b-4bde-8fe0-a73eef8dabed"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b684356a-b0cd-475e-ae6b-7b977285a739"
+        }
+      ],
+      "x": 360,
+      "y": 573,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "gen1",
+        "1000",
+        "10000",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "add cash",
+      "guid": "e984631c-d75b-4bde-8fe0-a73eef8dabed",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "13923cee-f43b-4fd2-b814-472af2c4db5a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "880335fe-1f8d-44e0-8435-d819c23f2dd5"
+        }
+      ],
+      "x": 570,
+      "y": 582,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "cash",
+        "+",
+        "${tempVars.gen1}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "send work",
+      "guid": "13923cee-f43b-4fd2-b814-472af2c4db5a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e984631c-d75b-4bde-8fe0-a73eef8dabed"
+        }
+      ],
+      "x": 788,
+      "y": 593,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Du hast ${tempVars.gen1} 💸 verdient!",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "getcash",
+      "guid": "91d9efdb-6337-4ade-8805-7be09972a438",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "cash",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "11779104-0f02-4fe7-97c6-5395fd955b41"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f08d3aba-5a7a-45c4-9bef-166912cb9c93"
+        }
+      ],
+      "x": 509,
+      "y": 741,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "cash",
+        "cash",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "check money",
+      "guid": "11779104-0f02-4fe7-97c6-5395fd955b41",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "9da871b8-1c7d-4470-894a-300b09b86cc9"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "efbf9c3e-589c-47b9-9d88-e42b1ac8e8f0"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "91d9efdb-6337-4ade-8805-7be09972a438"
+        }
+      ],
+      "x": 739,
+      "y": 734,
+      "rtype": "User Data",
+      "rsubtype": "Check User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "cash",
+        "greater than",
+        "1"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "compare",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "error dep",
+      "guid": "efbf9c3e-589c-47b9-9d88-e42b1ac8e8f0",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "11779104-0f02-4fe7-97c6-5395fd955b41"
+        }
+      ],
+      "x": 961,
+      "y": 875,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "❌Error❌",
+        "",
+        "",
+        "",
+        "",
+        "Du hast kein Geld auf der Hand!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "editbank",
+      "guid": "456b2a4f-5934-4e11-9d6a-31258b357314",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "3f5166dd-ab1d-4ecc-8366-bb6038d8817a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9da871b8-1c7d-4470-894a-300b09b86cc9"
+        }
+      ],
+      "x": 1180,
+      "y": 700,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "bank",
+        "+",
+        "${tempVars.dep_var}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "getdep",
+      "guid": "f08d3aba-5a7a-45c4-9bef-166912cb9c93",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "dep_var",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "91d9efdb-6337-4ade-8805-7be09972a438"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "bd4dd61a-b9b2-46c8-aae2-0162a7627f60"
+        }
+      ],
+      "x": 337,
+      "y": 726,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "dep_var",
+        "Number",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "editbank_1",
+      "guid": "3f5166dd-ab1d-4ecc-8366-bb6038d8817a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "07992ab6-fb3c-4f33-8b5f-665005055612"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "456b2a4f-5934-4e11-9d6a-31258b357314"
+        }
+      ],
+      "x": 1370,
+      "y": 704,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "cash",
+        "-",
+        "${tempVars.dep_var}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "dep msg",
+      "guid": "07992ab6-fb3c-4f33-8b5f-665005055612",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3f5166dd-ab1d-4ecc-8366-bb6038d8817a"
+        }
+      ],
+      "x": 1568,
+      "y": 710,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FF08",
+        "✅Success✅",
+        "",
+        "",
+        "",
+        "",
+        "Du hast ${tempVars.dep_var} 💸 auf die Bank überwiesen!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "getdep_1",
+      "guid": "9a8b92f4-afaf-4e74-a067-dd8130898030",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "with_var",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "21c09d89-a327-4487-95c4-a46cd8846844"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "31ba711b-3cc3-43db-b45e-9083d6691fca"
+        }
+      ],
+      "x": 340,
+      "y": 964,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "with_var",
+        "Number",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "getcash_1",
+      "guid": "21c09d89-a327-4487-95c4-a46cd8846844",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "bank",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "90fdcf5d-5c68-42ff-a9d9-b3910dfff4b5"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9a8b92f4-afaf-4e74-a067-dd8130898030"
+        }
+      ],
+      "x": 534,
+      "y": 980,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "bank",
+        "bank",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "check money_1",
+      "guid": "90fdcf5d-5c68-42ff-a9d9-b3910dfff4b5",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "35d34303-1b0a-4642-b6c6-db3559a5580f"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "ad3e1163-9b05-413d-9a1a-dd3afcc9d9e7"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "21c09d89-a327-4487-95c4-a46cd8846844"
+        }
+      ],
+      "x": 765,
+      "y": 983,
+      "rtype": "User Data",
+      "rsubtype": "Check User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "bank",
+        "greater than",
+        "1"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "compare",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "editbank_2",
+      "guid": "6f05f10b-460e-44aa-aeb9-02fc4ce05ea1",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d2b4cc28-dd21-4777-96dc-d10d14f6ac13"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "35d34303-1b0a-4642-b6c6-db3559a5580f"
+        }
+      ],
+      "x": 1218,
+      "y": 983,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "bank",
+        "-",
+        "${tempVars.with_var}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "error dep_1",
+      "guid": "ad3e1163-9b05-413d-9a1a-dd3afcc9d9e7",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "90fdcf5d-5c68-42ff-a9d9-b3910dfff4b5"
+        }
+      ],
+      "x": 966,
+      "y": 1169,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "❌Error❌",
+        "",
+        "",
+        "",
+        "",
+        "Du hast kein Geld auf der Bank!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "editbank_1_1",
+      "guid": "d2b4cc28-dd21-4777-96dc-d10d14f6ac13",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "ce13f14f-c488-4808-8785-bc9bf38dbfa4"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "6f05f10b-460e-44aa-aeb9-02fc4ce05ea1"
+        }
+      ],
+      "x": 1442,
+      "y": 983,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "cash",
+        "+",
+        "${tempVars.with_var}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "dep msg_1",
+      "guid": "ce13f14f-c488-4808-8785-bc9bf38dbfa4",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d2b4cc28-dd21-4777-96dc-d10d14f6ac13"
+        }
+      ],
+      "x": 1623,
+      "y": 972,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FF08",
+        "✅Success✅",
+        "",
+        "",
+        "",
+        "",
+        "Du hast ${tempVars.with_var}💸 von der Bank abgehoben!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "error dep_2",
+      "guid": "8a3e9cd2-22ad-4572-967b-0560c9154e9f",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9da871b8-1c7d-4470-894a-300b09b86cc9"
+        }
+      ],
+      "x": 1203,
+      "y": 849,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "❌Error❌",
+        "",
+        "",
+        "",
+        "",
+        "Du hast nicht genug Geld auf der Hand!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "error dep_2_1",
+      "guid": "2b01d9d4-6ac7-491c-ad00-4971b0ee1eb1",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "35d34303-1b0a-4642-b6c6-db3559a5580f"
+        }
+      ],
+      "x": 1230,
+      "y": 1117,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "❌Error❌",
+        "",
+        "",
+        "",
+        "",
+        "Du hast nicht genug Geld auf der Bank!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "checkcash",
+      "guid": "9da871b8-1c7d-4470-894a-300b09b86cc9",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "8a3e9cd2-22ad-4572-967b-0560c9154e9f"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "456b2a4f-5934-4e11-9d6a-31258b357314"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "11779104-0f02-4fe7-97c6-5395fd955b41"
+        }
+      ],
+      "x": 950,
+      "y": 724,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "dep_var",
+        "temp",
+        "greater than",
+        "${tempVars.cash}"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "checkcash_1",
+      "guid": "35d34303-1b0a-4642-b6c6-db3559a5580f",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "2b01d9d4-6ac7-491c-ad00-4971b0ee1eb1"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "6f05f10b-460e-44aa-aeb9-02fc4ce05ea1"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "90fdcf5d-5c68-42ff-a9d9-b3910dfff4b5"
+        }
+      ],
+      "x": 961,
+      "y": 1015,
+      "rtype": "Variable",
+      "rsubtype": "Check Variable Value",
+      "formdata": [
+        "with_var",
+        "temp",
+        "greater than",
+        "${tempVars.bank}"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "compare",
+        "value"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "addmoney",
+      "guid": "f3909b07-8dd0-4593-9f50-9f995b139ddd",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "ae15473c-2e6e-439d-9d1b-9b51ee478eb8"
+          ]
+        }
+      ],
+      "x": 113,
+      "y": 1274,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "getdep_2",
+      "guid": "ae15473c-2e6e-439d-9d1b-9b51ee478eb8",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "add_var",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "9de9cbfd-8358-4f14-a823-8d04c7fdc74e"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f3909b07-8dd0-4593-9f50-9f995b139ddd"
+        }
+      ],
+      "x": 301,
+      "y": 1285,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "add_var",
+        "Number",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "givemoney",
+      "guid": "9de9cbfd-8358-4f14-a823-8d04c7fdc74e",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "19aaf545-91d5-4324-8cfb-36c7376d3f0b"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ae15473c-2e6e-439d-9d1b-9b51ee478eb8"
+        }
+      ],
+      "x": 519,
+      "y": 1290,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        "cash",
+        "+",
+        "${tempVars.add_var}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "sendmoneyadded",
+      "guid": "19aaf545-91d5-4324-8cfb-36c7376d3f0b",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9de9cbfd-8358-4f14-a823-8d04c7fdc74e"
+        }
+      ],
+      "x": 728,
+      "y": 1291,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "82FFC5",
+        "✅Success✅",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "${dbsVars.CommandAuthor.user.avatarURL}",
+        "",
+        "${dbsVars.CommandAuthor.displayName} hat ${tempVars.add_var} erhalten!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "addmoneyto",
+      "guid": "d7a04f95-586d-494e-8705-aa67d441a7d7",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "e9034ff8-4701-4829-9ebc-e8e2f28eb6ff"
+          ]
+        }
+      ],
+      "x": 108,
+      "y": 1439,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "getdep_2_1",
+      "guid": "d5c01917-e02f-4944-a453-8a1ad87b5e63",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "add_var",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "8b6f6656-a439-4e75-a02c-0633b39a9451"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e9034ff8-4701-4829-9ebc-e8e2f28eb6ff"
+        }
+      ],
+      "x": 548,
+      "y": 1434,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "add_var",
+        "Number",
+        "temp",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "givemoney_1",
+      "guid": "8b6f6656-a439-4e75-a02c-0633b39a9451",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "993c5cbe-2e90-40c4-866d-de1e189809fb"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d5c01917-e02f-4944-a453-8a1ad87b5e63"
+        }
+      ],
+      "x": 759,
+      "y": 1440,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${tempVars.var_getuser1.id}",
+        "cash",
+        "+",
+        "${tempVars.add_var}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "sendmoneyadded_1",
+      "guid": "993c5cbe-2e90-40c4-866d-de1e189809fb",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8b6f6656-a439-4e75-a02c-0633b39a9451"
+        }
+      ],
+      "x": 956,
+      "y": 1434,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "82FFC5",
+        "✅Success✅",
+        "",
+        "${dbsVars.CommandAuthor.displayName}",
+        "${dbsVars.CommandAuthor.user.avatarURL}",
+        "",
+        "${dbsVars.CommandAuthor.displayName} hat ${tempVars.add_var}💸 überwiesen!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "getuser1",
+      "guid": "e9034ff8-4701-4829-9ebc-e8e2f28eb6ff",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d5c01917-e02f-4944-a453-8a1ad87b5e63"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d7a04f95-586d-494e-8705-aa67d441a7d7"
+        }
+      ],
+      "x": 330,
+      "y": 1435,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "var_getuser1",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ]
+    }
+  ]
+}

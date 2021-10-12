@@ -1,0 +1,88 @@
+{
+  "command": [
+    {
+      "name": "User Joins Server",
+      "perms": [],
+      "actions": [
+        {
+          "name": "welcome",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "882010754096726107",
+          "color": "4DFFE1",
+          "title": "🌹WILLKOMMEN🌹",
+          "url": "",
+          "authorname": "<@${dbsVars.DefaultChannel.id}>${dbsVars.DefaultChannel.displayName}",
+          "authorimageurl": "${dbsVars.DefaultChannel.user.avatarURL}",
+          "authorlink": "",
+          "description": "Herzlich Willkommen im Konoha Cafe, viel Spaß und einen Guten Aufenthalt! Vergiss nicht die Regeln zu Akzeptieren!",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "set start money_1",
+          "category": "User Data",
+          "type": "Set User Data",
+          "user": "${tempVars.newuser.id}",
+          "field": "cash",
+          "fieldvalue": "0"
+        },
+        {
+          "name": "set start money",
+          "category": "User Data",
+          "type": "Set User Data",
+          "user": "${tempVars.newuser.id}",
+          "field": "bank",
+          "fieldvalue": "10000"
+        }
+      ],
+      "var": {
+        "user": "newuser"
+      }
+    },
+    {
+      "name": "Any Message",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "msguser"
+      }
+    },
+    {
+      "name": "User Kicked",
+      "perms": [],
+      "actions": [
+        {
+          "name": "ur kicked",
+          "category": "Message",
+          "type": "Send Direct Message",
+          "user": "${dbsVars.DefaultChannel.id}",
+          "messagetext": "Du wurdest von Konoha Cafe gekickt!",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ],
+      "var": {
+        "user": "kickuser"
+      }
+    },
+    {
+      "name": "User Banned",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "banuser"
+      }
+    },
+    {
+      "name": "Bot Initialization",
+      "perms": [],
+      "actions": [],
+      "var": {}
+    }
+  ]
+}
